@@ -60,7 +60,7 @@ export class AuthService {
         /* Call the SendVerificaitonMail() function when new user sign 
         up and returns promise */
         //this.SendVerificationMail();
-        this.SetUserData(result.user);
+        //this.SetUserData(result.user);
         this.router.navigate(['dashboard']);
       })
       .catch((error) => {
