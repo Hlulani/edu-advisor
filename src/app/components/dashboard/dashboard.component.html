@@ -1,0 +1,158 @@
+<!-- <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0">
+      <img class="brand-logo" src="assets/logo-positronx-white.svg" alt="positronX.io Logo">
+    </a>
+  </nav>
+  
+  <div class="container-fluid">
+    <div class="row"> -->
+  
+      <!-- <nav class="col-md-2 d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active">
+                <i class="fas fa-user"></i>User Profile
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="authService.SignOut()">
+                <i class="fas fa-sign-out-alt"></i>Log out
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav> -->
+  
+      <!-- Main content -->
+      <!-- <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="inner-adjust">
+  
+          <div class="pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">User Profile</h1>
+          </div>
+          <div class="row" *ngIf="authService.userData as user">
+            <div class="col-md-12">
+              <div class="media">
+                <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
+                  alt="{{user.displayName}}">
+                <div class="media-body">
+                  <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+                  <p>User ID: <strong>{{user.uid}}</strong></p>
+                  <p>Email: <strong>{{user.email}}</strong></p>
+                  <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </main>
+  
+    </div>
+  </div> -->
+
+<!-- registration.component.html -->
+<div class="registration-container">
+  <div class="registration-form">
+    <form [formGroup]="registrationForm">
+
+
+      <!-- Step 1: User Information -->
+      <div [hidden]="currentStep !== 1">
+        <h1 class="welcome">Welcome <em class="italic-blue">Hlulani</em></h1>
+
+        <h2 class="header">We'll help you find your ideal studies and institutions based on your goals and preferences.</h2>
+        <p class="paragraph-1">Answer a few questions, and we'll provide personalized recommendations to get you a step closer to your future</p>
+        <!-- Include form fields for username/email and password -->
+        <button type="button" (click)="nextStep()" class="btn btn-primary custom-width" >Let's get started</button>
+      </div>
+
+         <!-- Step 1: User Information -->
+         <div [hidden]="currentStep !== 2">
+          <h2 class="header">Please tell us a little about yourself!</h2>
+          <div class="form-group form-space">
+            <label for="firstName">What is your name</label>
+            <input type="text" id="firstName" formControlName="firstName" class="form-control gray-input">
+          </div>
+          <div class="form-group form-space">
+            <label for="lastName">When were you born</label>
+            <input type="text" id="lastName" formControlName="lastName" class="form-control gray-input">
+          </div>
+          <!-- <p class="paragraph-1">Answer a few questions, and we'll provide personalized recommendations to get you a step closer to your future</p> -->
+          <!-- Include form fields for username/email and password -->
+          <button type="button" (click)="nextStep()" class="btn btn-primary custom-width" >Next</button>
+        </div>
+  
+
+
+            <!-- Step 1: User Information -->
+      <div [hidden]="currentStep !== 3">
+        <h2 class="header">Let's make this fun, add your academic history!</h2>
+        <div class="btn-group col-xs-12">
+          <div class="select">
+            <input type="checkbox" id="item_1">
+            <label class="btn-multi btn-warning button_select" for="item_1">Business</label>
+          </div>
+
+          <div class="select">
+            <input type="checkbox" id="item_2">
+            <label class="btn-multi  btn-warning button_select" for="item_2">Mathematics</label>
+          </div>
+
+          <div class="select">
+            <input type="checkbox" id="item_3">
+            <label class="btn-multi btn-warning button_select" for="item_3">Science</label>
+          </div>
+
+          <div class="select">
+            <input type="checkbox" id="item_4">
+            <label class="btn-multi btn-warning button_select" for="item_4">Indegenous Languages</label>
+          </div>
+        </div>
+
+        <button type="button" (click)="nextStep()" class="btn btn-primary custom-width">Next</button>
+      </div>
+
+
+      <!-- Step 3: Additional Information -->
+      <!-- Add more steps similarly -->
+
+
+       <!-- Step 4: Review and Submit -->
+       <div [hidden]="currentStep !== 4">
+        <h2>What are some of your passions</h2>
+
+        <p class="paragraph-1">What subjects are you most passionate about or considering for your future?</p>
+
+
+  <div class="passions-container">
+    <div class="passions" *ngFor="let passion of passions" (click)="togglePassionSelection(passion)">
+      {{ passion }}
+    </div>
+  </div>
+        <button class="btn btn-primary custom-width" type="button" (click)="revealCareer()">Submit</button>
+       
+      </div>
+  
+      <!-- Step 4: Review and Submit -->
+      <div [hidden]="currentStep !== 5">
+        <h2>Do you have any accessibility needs?</h2>
+        <div></div>
+        <button type="button" (click)="prevStep()">Previous</button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  
+    <!-- Progress Bar -->
+    <div class="progress">
+      <div class="progress-bar"
+           [style.width]="(currentStep / totalSteps) * 100 + '%'">
+        {{ (currentStep / totalSteps) * 100 }}%
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  

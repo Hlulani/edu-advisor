@@ -1,0 +1,184 @@
+.registration-container {
+    background-image: url('../../../assets/22.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin-left: 3rem;
+  }
+  
+  .registration-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%; /* Adjust the width as needed */
+  }
+
+  .welcome {
+    margin-bottom: 3rem;
+  }
+
+  .italic-blue {
+    font-style: italic;
+    color: #92F6FF;
+  }
+
+  .header {
+      margin-bottom: 3rem;
+  }
+
+  .paragraph-1 {
+    margin-bottom: 2rem;
+  }
+  
+  .custom-width {
+    width: 200px; /* Adjust the width as needed */
+    margin-bottom: 2rem;
+    background-color: #ffc107;
+    height: 3rem;
+}
+
+.btn-multi{
+
+    bottom: 5px;
+    left: 0px;
+    margin-left: 6rem;
+    margin-bottom: 8rem;
+    margin-bottom: 3rem;
+    background-color: #f5a201;
+    height: 55px;
+   
+}
+
+.form-space {
+    margin-bottom: 3rem;
+}
+
+.gray-input {
+    background-color: #f5f5f5; /* Gray background color */
+    border: 1px solid #ccc; /* Gray border */
+    color: #333; /* Text color */
+  }
+
+  .academic-history-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .academic-history-btn {
+    background-color: #ccc; /* Gray background color for unselected buttons */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 20px; /* Make it rounder */
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+
+
+  .btn-group{
+  
+    .select{
+        position:relative;
+      
+        input:checked + label {
+          background-color: #ffc107;
+          &:hover,
+          &:focus,
+          &:active{
+            background-color: #ffc107;      
+          }
+      }  
+      input{
+          opacity: 0;
+          position: absolute;
+        }
+      
+      .button_select{
+        margin: 0 10px 10px 0;
+        display:flex;
+        background-color: transparent;   
+        
+        &:hover,
+        &:focus,
+        &:active{
+          background-color: transparent;      
+        }
+      }
+    }
+      
+    }
+    
+    
+    .option {
+        position:relative;
+      
+      input{
+          opacity: 0;
+          position: absolute;
+        }
+      
+        input:checked + span {
+          background-color: #ffc107;
+          &:hover,
+          &:focus,
+          &:active{
+            background-color: #ffc107;      
+          }
+      } 
+      
+      .btn-option{
+        margin: 0 10px 10px 0;
+        display:flex;
+        background-color: gray;   
+        
+        &:hover,
+        &:focus,
+        &:active{
+          background-color: gray;      
+        }
+      }
+    }
+    
+
+
+    .passions {
+      height: 100px;
+      width: 120px;
+      background-color: #b3cde0;
+      border-radius: 25px; /* <---------- use this to round all corners in div */
+      text-align: center;
+      padding-top: 20px;
+    }
+
+
+    /* Add this to your CSS file */
+.passions-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.passions {
+  height: 100px;
+  width: calc(25% - 10px); /* Four passions per row with 10px gap */
+  background-color: #b3cde0;
+  border-radius: 25px;
+  text-align: center;
+  padding-top: 20px;
+  cursor: pointer;
+}
+
+.passions.selected {
+  background-color: #007bff; /* Selected background color */
+  color: #fff; /* Selected text color */
+}
+

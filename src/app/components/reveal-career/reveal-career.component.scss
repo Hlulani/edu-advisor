@@ -1,0 +1,16 @@
+/* reveal-career.component.css */
+.fullscreen-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* Ensure the image is on top of other content */
+  }
+  
+  .fullscreen-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make the image cover the entire container */
+  }
+  

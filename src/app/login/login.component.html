@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row justify-content-center mt-5">
         <div class="col-md-6">
             <div class="card">
@@ -6,7 +6,7 @@
                     <h2 class="text-center">Login</h2>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form  >
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
                             <input type="text" class="form-control" id="username" name="username" required>
@@ -19,8 +19,8 @@
                             <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
                             <label class="form-check-label" for="rememberMe">Remember Me</label>
                         </div> -->
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary btn-md btn-block custom-width waves-effect text-center m-b-20 mt-5">Login</button>
+                        <!-- <div class="text-center">
+                            <button (click)="loginWithEmailAndPassword()" type="submit" class="btn btn-primary btn-md btn-block custom-width waves-effect text-center m-b-20 mt-5">Login</button>
                         </div>
                     </form>
                 </div>
@@ -37,4 +37,57 @@
          
         </div>
     </div>
-</div>
+</div> --> 
+
+
+
+<div class="displayTable">
+    <div class="displayTableCell">
+      <div class="authBlock">
+        <h3>Sign In</h3>
+        <div class="formGroup">
+          <input
+            type="text"
+            class="formControl"
+            placeholder="Username"
+            #userName
+            required
+          />
+        </div>
+        <div class="formGroup">
+          <input
+            type="password"
+            class="formControl"
+            placeholder="Password"
+            #userPassword
+            required
+          />
+        </div>
+        <!-- Calling SignIn Api from AuthService -->
+        <div class="formGroup">
+          <input
+            type="button"
+            class="btn btnPrimary"
+            value="Log in"
+            (click)="authService.SignIn(userName.value, userPassword.value)"
+          />
+        </div>
+        <div class="formGroup">
+          <span class="or"><span class="orInner">Or</span></span>
+        </div>
+        <div class="forgotPassword">
+          <span routerLink="/forgot-password">Forgot Password?</span>
+        </div>
+      </div>
+      <div class="redirectToLogin">
+        <span
+          >Don't have an account?<span
+            class="redirect"
+            routerLink="/register-user"
+          >
+            Sign Up</span
+          ></span
+        >
+      </div>
+    </div>
+  </div>

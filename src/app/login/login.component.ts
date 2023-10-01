@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
   loginWthGoogle(){
     this.firebaseAuthService.signInWithGoogle().then((res: any) =>{
       this.router.navigateByUrl("advisor")
@@ -28,5 +29,16 @@ export class LoginComponent implements OnInit {
     }).catch((error: any) =>[
       console.error(error)
     ])
+  }
+
+  loginWithEmailAndPassword() {
+    const userData = Object.assign(this.loginForm.value, {email: this.loginForm.value.username}) 
+    this.firebaseAuthService.login(userData).then((res: any) =>{
+      this.router.navigateByUrl("advisor")
+
+    }).catch((error: any) =>[
+      console.error(error)
+    ])
+
   }
 }
