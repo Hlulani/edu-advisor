@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/edu-advisor",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -33,6 +34,7 @@
             "scripts": []
           },
           "configurations": {
+           
             "production": {
               "budgets": [
                 {
@@ -56,7 +58,7 @@
             },
             "development": {
               "buildOptimizer": false,
-              "optimization": false,
+              "optimization": true,
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
@@ -80,6 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
+            "aot": true,
             "browserTarget": "edu-advisor:build",
             "proxyConfig": "src/proxy.conf.json"
           }
@@ -87,6 +90,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            "aot": true,
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
