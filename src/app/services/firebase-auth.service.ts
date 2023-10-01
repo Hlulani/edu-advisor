@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { GoogleAuthProvider } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,8 +18,8 @@ export class FirebaseAuthService {
     return this.afAuth.createUserWithEmailAndPassword(email, password);
   }
 
-  login(email: string, password: string): Promise<any> {
-    return this.afAuth.signInWithEmailAndPassword(email, password);
+  login( user: {email: string, password: string}){
+    return this.afAuth.signInWithEmailAndPassword(user.email, user.password);
   }
 
   logout(): Promise<any> {
@@ -26,3 +27,5 @@ export class FirebaseAuthService {
   }
 
 }
+
+
