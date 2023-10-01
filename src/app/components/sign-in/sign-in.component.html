@@ -28,9 +28,12 @@
             type="button"
             class="btn btnPrimary"
             value="Log in"
-            (click)="goToDashboard()"
+            routerLink="/dashboard"
+            (click)="authService.SignIn(userName.value, userPassword.value)"
           />
         </div>
+        <!-- (click)="authService.SignIn(userName.value, userPassword.value)"  -->
+
   
         <div class="formGroup">
           <span class="or"><span class="orInner">Or</span></span>
