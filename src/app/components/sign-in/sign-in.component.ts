@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
 
@@ -8,7 +9,11 @@ import { AuthService } from '../../shared/services/auth.service';
 })
 
 export class SignInComponent implements OnInit {
-  constructor(public authService: AuthService) {}
+  constructor(public authService: AuthService, private router: Router) {}
 
   ngOnInit() {}
+
+  goToDashboard(){
+    this.router.navigateByUrl("dashboard")
+  }
 }

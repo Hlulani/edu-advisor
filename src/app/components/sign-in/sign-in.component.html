@@ -28,9 +28,10 @@
             type="button"
             class="btn btnPrimary"
             value="Log in"
-            (click)="authService.SignIn(userName.value, userPassword.value)"
+            (click)="goToDashboard()"
           />
         </div>
+         <!-- (click)="authService.SignIn(userName.value, userPassword.value)" -->
   
         <div class="formGroup">
           <span class="or"><span class="orInner">Or</span></span>
